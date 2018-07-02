@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import * as foursquare from './foursquare'
 
 class App extends Component {
 	state={
-		allPlaces:require("./locations.json"),
+		allPlaces:require("./locations.json"), //getting all the places from json file
 		map:"",
 		prev:[],
 		markers:[]
-	}
 
+	}
+	//for loading the map
 	componentDidMount=()=> {
 	window.initMap=this.initMap;
 
@@ -28,7 +30,11 @@ class App extends Component {
 
    var locationsList=[];
    var bounds= new window.google.maps.LatLngBounds();
-
+   var infowindow=new window.google.maps.InfoWindow({maxWidth:250});
+	this.setState({
+		infowindow:infowindow
+	})
+   //adding markers
     this.state.allPlaces.forEach(place=>{
     var marker = new window.google.maps.Marker({
     	position: {
@@ -41,8 +47,9 @@ class App extends Component {
     locationsList.push(marker);
     var locations= new window.google.maps.LatLng(marker.position.lat(), marker.position.lng());
     bounds.extend(locations);
+    //open infowindow when marker is clicked
     window.google.maps.event.addListener(marker,'click',()=> {
-        this.openInfo(marker);
+        this.openInfoWindow(marker,infowindow);
       })
     })
    this.setState({
@@ -57,17 +64,55 @@ class App extends Component {
     this.state.map.panToBounds(bounds);
 });
 
-   var infowindow=new window.google.maps.InfoWindow({maxWidth:250});
-	this.setState({
-		infowindow:infowindow
-	})
 }
-openInfo=(marker)=> {
-	marker.setAnimation(window.google.maps.Animation.BOUNCE);
-    setTimeout(function() {
-      marker.setAnimation(null);
-    }, 1000);
-}
+
+//shows info window
+ openInfoWindow=(marker,infowindow)=> {
+ 		if (infowindow.marker != marker) {
+           // this.map.panTo(new window.google.maps.LatLng(marker.position.lat(), marker.position.lng()));
+            marker.setAnimation(window.google.maps.Animation.BOUNCE);
+            infowindow.marker = marker;
+            setTimeout(function () {
+                marker.setAnimation(null);
+            }, 1500);
+            infowindow.setContent('<div>Loading details..</div>');
+            infowindow.open(this.map, marker);
+            infowindow.addListener('closeclick', function () {
+                infowindow.marker = null;
+            });
+        }
+        //contents of infowindow
+          foursquare.foursquareApi(marker.position.lat(), marker.position.lng()).then((res) => {
+            console.log(res);
+            if (res.response.venues.length > 0) {
+                var venue = res.response.venues[0];
+                var placeName = "";
+                var contact = "";
+                var placeAddress = "";
+                var moreAbout = '<a href="https://foursquare.com/v/'+ venue.id +'" target="_blank"><b>More about the place..</b></a>'
+                if (venue.name) {
+                    placeName = venue.name;
+                }
+                if (venue.location && venue.location.formattedAddress && venue.location.formattedAddress.length > 0) {
+                    placeAddress = venue.location.formattedAddress[0];
+                }
+                if (venue.contact && venue.contact.phone) {
+                    contact = venue.contact.phone;
+                }
+                infowindow.setContent('<div><div><strong>Name: ' + placeName + '</strong></div><div>Address: ' + placeAddress + '</div><div>Phone: ' + contact + ' </div><div>' + moreAbout+ '</div></div>');
+            }
+
+        }).catch(function (err) {
+            infowindow.setContent('<div><strong>Sorry..cannot load details/strong></div>');
+        });;
+    
+    }
+
+
+
+	
+
+
 
   render() {
     return (

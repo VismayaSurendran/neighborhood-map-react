@@ -24,10 +24,10 @@
     "longitude": 75.774088
   },
   {
-    "name": "Coffee Beanz",
-    "type": "Cafe",
-    "latitude": 11.256259,
-    "longitude": 75.775120
+    "name": "Goli",
+    "type": "Snack Place",
+    "latitude": 11.256323,
+    "longitude": 75.7750788
   },
   {
     "name": "Down Town Cafe",
@@ -48,8 +48,8 @@
     "longitude": 75.778507
   },
   {
-    "name": "Zain's Hotel",
-    "type": "Kerala Restaurant",
+    "name": "Biriyaani Aakashavani Sulaimani",
+    "type": "Indian Restaurant",
     "latitude": 11.254552,
     "longitude": 75.773752
   },
