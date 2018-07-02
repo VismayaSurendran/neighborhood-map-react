@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Café Coffee Day",
+    "type": "Coffee Shop",
+    "latitude": 11.259059,
+    "longitude": 75.775638
+  },
+  {
+    "name": "Garlic Routes",
+    "type": "Restaurant",
+    "latitude": 11.259988,
+    "longitude": 75.776458
+  },
+  {
+    "name": "Sixth Avenue Cafe",
+    "type": "Coffee Shop",
+    "latitude": 11.258249,
+    "longitude": 75.774915
+  },
+  {
+    "name": "Zam Zam Restaurant",
+    "type": "Indian Restaurant",
+    "latitude": 11.256350,
+    "longitude": 75.774088
+  },
+  {
+    "name": "Coffee Beanz",
+    "type": "Cafe",
+    "latitude": 11.256259,
+    "longitude": 75.775120
+  },
+  {
+    "name": "Down Town Cafe",
+    "type": "Cafe",
+    "latitude": 11.258586,
+    "longitude": 75.775293
+  },
+  {
+    "name": "The Gateway Hotel Calicut",
+    "type": "5-star hotel",
+    "latitude": 11.258963,
+    "longitude": 75.773682
+  },
+  {
+    "name": "Paragon Restaurant",
+    "type": "Indian Restaurant",
+    "latitude": 11.256754,
+    "longitude": 75.778507
+  },
+  {
+    "name": "Zain's Hotel",
+    "type": "Kerala Restaurant",
+    "latitude": 11.254552,
+    "longitude": 75.773752
+  },
+  {
+    "name": "Kingsbay",
+    "type": "Seafood Restaurant",
+    "latitude": 11.258275,
+    "longitude": 75.771477
+  }
+]
