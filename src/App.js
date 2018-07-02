@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+	componentDidMount=()=> {
+	window.initMap=this.initMap;
+
+	mapLoad('https://maps.googleapis.com/maps/api/js?key=AIzaSyBH3wHqNnJZiuMCD1NhAGbgFF8xmVD1ah8&callback=initMap'); 
+	}
+
+	initMap=()=>{
+	
+	var showmap=document.getElementById('map');
+	var map=new window.google.maps.Map(showmap,{
+		center:{lat:11.259550, lng:75.776057},
+		zoom:15,
+	});
+}
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+       <div id="map" style={{height:window.innerHeight+"px"}}></div>
+        
       </div>
     );
   }
 }
 
 export default App;
+
+function mapLoad(src) {
+    var ref = window.document.getElementsByTagName("script")[0];
+    var script = window.document.createElement("script");
+    script.src = src;
+    script.async = true;
+    ref.parentNode.insertBefore(script, ref);
+}
