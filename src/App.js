@@ -62,6 +62,12 @@ class App extends Component {
 		infowindow:infowindow
 	})
 }
+openInfo=(marker)=> {
+	marker.setAnimation(window.google.maps.Animation.BOUNCE);
+    setTimeout(function() {
+      marker.setAnimation(null);
+    }, 1000);
+}
 
   render() {
     return (
