@@ -7,22 +7,22 @@ class List extends Component {
   }
   render = () => {
     return (
-      <div id = "filter-navigator" >
-      <h3 id="names">Restaurants and Cafe</h3>
+      <div className = "list-box" >
+      <h3 className="list-head">RESTAURANTS & CAFE</h3>
       <input 
       type = "text" 
       placeholder = "Search here"
-      id = "filter"
-      aria-label = "Search Filter"
+      className = "input-box"
+      aria-label = "Search Box"
       role = "Search" 
       onChange = {this.props.searchQuery}/>
-      <ul id = "items-list" 
+      <ul className = "sidelist" 
       aria-label="list of locations" 
       role = "navigation" >
       {
         this.props.allPlaces.map((venue,pos) => {
             return ( < li key = {pos}
-              className = "elementss"
+              className = "places"
               onClick = {
                 this.props.openInfoWindow.bind(this,venue)
               }

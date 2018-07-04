@@ -174,13 +174,13 @@ class App extends Component {
   
   render = () => {
     return (
-      <div id = "container" role = "main" >      
+      <div id = "full-content" role = "main" >      
       <List allPlaces= {this.state.markers}
       openInfoWindow = { this.openInfoWindow} 
       searchQuery = { this.searchQuery}
       
       />
-      <div id = "map-container" role = "application" tabIndex = "-1" >
+      <div id = "map-box" role = "application" tabIndex = "-1" >
       <div id = "map" style = {{ height: window.innerHeight + "px" }} >
       </div>
       </div>
