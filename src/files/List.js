@@ -1,4 +1,3 @@
-// To make best use of React
 import React, {Component} from 'react';
 
 class List extends Component {
@@ -15,12 +14,14 @@ class List extends Component {
       className = "input-box"
       aria-label = "Search Box"
       role = "Search" 
-      onChange = {this.props.searchQuery}/>
+      onChange = {this.props.searchQuery} 
+      />
       <ul className = "sidelist" 
       aria-label="list of locations" 
       role = "navigation" >
       {
         this.props.allPlaces.map((venue,pos) => {
+          //location list
             return ( < li key = {pos}
               className = "places"
               onClick = {

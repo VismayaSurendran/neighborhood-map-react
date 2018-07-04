@@ -9,12 +9,12 @@ class App extends Component {
          
     map: '',
     markers: [],
-    prev: [],
+    prev: [],  //prev marker
     infowindow: '',
    
   }
 
-  
+  //loading map with google API
   componentDidMount(){
     
     window.initMap = this.initMap;
@@ -37,7 +37,7 @@ class App extends Component {
 
    
     var latlngbnd = new window.google.maps.LatLngBounds();
-    
+    //setting up of markers
     this.state.allPlaces.forEach(places => {
       var marker = new window.google.maps.Marker({
         position: {
@@ -53,7 +53,7 @@ class App extends Component {
       var extension = new window.google.maps.LatLng(marker.position.lat(), marker.position.lng());
 
       latlngbnd.extend(extension);      
-
+      //open infowindow on marker click
       window.google.maps.event.addListener(marker,'click',()=> {
         this.openInfoWindow(marker);
       })
@@ -73,7 +73,7 @@ class App extends Component {
 
    
 
-    var infowindow = new window.google.maps.InfoWindow({ maxWidth: 200 });
+    var infowindow = new window.google.maps.InfoWindow({ maxWidth: 250 });
     this.setState({
       infowindow:infowindow
     })
@@ -88,6 +88,7 @@ class App extends Component {
     }, 800);
    
     this.state.map.setCenter(marker.getPosition());
+    //foursquare details
     var clientID = "UWWIORSH0WIMJXSYCCALKZ0PCO2PHHLA0JJS2VD22LMWMWBT";
     var clientSECRET = "UCWLVB1HQ2C12G5TWAHTHUGSAUWW1MPQY3FWRGTQKUZG1YHP";
     
@@ -100,6 +101,7 @@ class App extends Component {
     marker.getPosition().lng() + "";
 
     this.state.infowindow.setContent("Loading..")
+    //fetch the url
     fetch(url)
       .then((res)=>{
         if (res.status !== 200) {
@@ -141,7 +143,7 @@ class App extends Component {
 
     this.state.infowindow.open(this.state.map,marker);
   }
-  
+  //search input of locations
   searchQuery = (e) => {
     this.state.infowindow.close();
     var searchArray = [];
