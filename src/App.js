@@ -173,7 +173,7 @@ class App extends Component {
     })
   }
  
-  
+  //render list
   render = () => {
     return (
       <div id = "full-content" role = "main" >      
