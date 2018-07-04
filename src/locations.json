@@ -1,21 +1,21 @@
 [
   {
-    "name": "Café Coffee Day",
-    "type": "Coffee Shop",
-    "latitude": 11.259059,
-    "longitude": 75.775638
+    "name": "Crown Theatre",
+    "type": "Theatre",
+    "latitude": 11.253449236980327,
+    "longitude": 75.7790441751907
   },
   {
     "name": "Garlic Routes",
     "type": "Restaurant",
-    "latitude": 11.259988,
-    "longitude": 75.776458
+    "latitude": 11.259889908181739,
+    "longitude": 75.77665418047022
   },
   {
     "name": "Sixth Avenue Cafe",
     "type": "Coffee Shop",
-    "latitude": 11.258249,
-    "longitude": 75.774915
+    "latitude": 11.258400809294898,
+    "longitude": 75.77494939704337
   },
   {
     "name": "Zam Zam Restaurant",
@@ -25,15 +25,15 @@
   },
   {
     "name": "Goli",
-    "type": "Snack Place",
-    "latitude": 11.256323,
-    "longitude": 75.7750788
+    "type": "Snacks",
+    "latitude": 11.25632298892934,
+    "longitude": 75.77507878129144
   },
   {
     "name": "Down Town Cafe",
     "type": "Cafe",
-    "latitude": 11.258586,
-    "longitude": 75.775293
+    "latitude": 11.258545226534963,
+    "longitude": 75.77531789442955
   },
   {
     "name": "The Gateway Hotel Calicut",
@@ -44,19 +44,19 @@
   {
     "name": "Paragon Restaurant",
     "type": "Indian Restaurant",
-    "latitude": 11.256754,
-    "longitude": 75.778507
+    "latitude": 11.256669055429949,
+    "longitude": 75.7786312737756
   },
   {
-    "name": "Biriyaani Aakashavani Sulaimani",
-    "type": "Indian Restaurant",
+    "name": "Zains",
+    "type": "Restaurant",
     "latitude": 11.254552,
     "longitude": 75.773752
   },
   {
     "name": "Kingsbay",
     "type": "Seafood Restaurant",
-    "latitude": 11.258275,
-    "longitude": 75.771477
+    "latitude": 11.258298494843983,
+    "longitude": 75.7715752057198
   }
 ]

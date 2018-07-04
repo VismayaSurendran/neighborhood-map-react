@@ -1,5 +1,47 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+#filter-navigator {
+  float: left;
+  padding: 10px;
+}
+
+#items-list {
+  list-style-type: none;
+  padding:15px;
+}
+
+#names{
+  margin-left: 15px;
+  padding: 10px;
+  cursor: not-allowed;
+  color:#00004d;
+}
+
+#filter {
+  margin-left: 15px;
+  padding: 10px;
+  cursor: auto;
+  border: 2px solid green;
+}
+
+#toggle-nav {
+  position: absolute;
+  width: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  fill: #3a4245;
+  right: 35px;
+  top: 8px;
+  z-index: 5;
+}
+
+.elementss {
+  cursor: pointer;
+  padding: 10px;
+  color: #991f00;
+  font-weight: 700;
+}
+
+
+.close {
+  margin-left: -20px;
+  width: 0;
 }
