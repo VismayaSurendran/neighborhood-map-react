@@ -128,7 +128,8 @@ class App extends Component {
                 }
                     
                     var moreAbout = '<a href="https://foursquare.com/v/'+ place.id +'"target="_blank"><b>Checkout for more details</b></a>';
-                    console.log(place);                   
+                    console.log(place);  
+                    //infowindow contents                 
                     this.state.infowindow.setContent(`<b>${heading}</b><br><b>Tips :</b> ${place.tips.count}<br><b>Likes:</b> ${place.likes.count} <br> <b>Phone: </b>${contact} <br> ${moreAbout}`)
                   })
               })
