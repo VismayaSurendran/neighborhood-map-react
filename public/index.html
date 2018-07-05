@@ -26,6 +26,15 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+
+    <!-- google maps error handling -->
+    <script>
+
+window.gm_authFailure = function() {
+  
+   alert('Google maps failed to load!');
+}
+</script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

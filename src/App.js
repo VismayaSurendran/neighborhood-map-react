@@ -1,4 +1,5 @@
 
+
 import React, {Component} from 'react';
 import List from './files/List';
 
@@ -18,7 +19,7 @@ class App extends Component {
   componentDidMount(){
     
     window.initMap = this.initMap;
-    mapLoad('https://maps.googleapis.com/maps/api/js?key=AIzaSyBH3wHqNnJZiuMCD1NhAGbgFF8xmVD1ah8&callback=initMap')
+   mapLoad('https://maps.googleapis.com/maps/api/js?key=AIzaSyBH3wHqNnJZiuMCD1NhAGbgFF8xmVD1ah8&callback=initMap')
   }
   
   initMap = () => {
