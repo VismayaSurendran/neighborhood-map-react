@@ -5,6 +5,7 @@
   border:solid 5px #3d3d29;
   border-radius: 20px;
   background-color: #d6d6c2;
+  height:750px;
 }
 
 
@@ -20,7 +21,7 @@
   list-style-type: none;
   background-color:#cfc;
   border-radius: 20px;
-  
+  text-align: center;
 }
 
 .places {
@@ -44,6 +45,34 @@
   background-color: #f5f5f0;
   border: 2px solid blue;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) { 
+  .list-box{
+    width:40%;    
+
+  }
+  .map-box{
+    width: 50%;
+  }
+  .input-box{
+    width: 50%;    
+  }
+
+  input,
+  input::placeholder{
+    font-size: 12px;
+  }
+
+  .list-head{
+    width: 40%;
+    margin:2px;
+    text-align: center;
+  }
+  .sidelist{
+    padding: 5px;
+
+  }
 }
 
 
